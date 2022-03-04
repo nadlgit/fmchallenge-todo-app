@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/fmchallenge-todo-app/static/css/main.49f373f3.css",
+    "main.js": "/fmchallenge-todo-app/static/js/main.1f2a4154.js",
+    "index.html": "/fmchallenge-todo-app/index.html",
+    "static/media/icon-cross.svg": "/fmchallenge-todo-app/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
+    "main.49f373f3.css.map": "/fmchallenge-todo-app/static/css/main.49f373f3.css.map",
+    "main.1f2a4154.js.map": "/fmchallenge-todo-app/static/js/main.1f2a4154.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49f373f3.css",
+    "static/js/main.1f2a4154.js"
+  ]
+}
