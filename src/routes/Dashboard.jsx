@@ -1,31 +1,31 @@
+import './Dashboard.css';
 import { useState } from 'react';
 import { todosFilterValues } from '../utils/config';
 import { useTodos } from '../stores/todos';
-import { TodoEntry } from '../components/TodoEntry';
+import { Header } from '../components/Header';
 import { TodosList } from '../components/TodosList';
-import { TodosFilter } from '../components/TodosFilter';
+import { StatusBar } from '../components/StatusBar';
 
 export const Dashboard = () => {
   const { todos, addTodo, setCompleted, deleteTodo, deleteCompletedTodos } = useTodos();
-  const [todoFilter, setTodoFilter] = useState(todosFilterValues.ALL);
+  const [todosFilter, setTodosFilter] = useState(todosFilterValues.ALL);
   return (
-    <>
-      <h1>todo</h1>
-      <TodoEntry addTodo={addTodo} />
+    <div className="todos__dashboard">
+      <Header />
       <TodosList
         todos={todos}
+        todosFilter={todosFilter}
+        addTodo={addTodo}
         setCompleted={setCompleted}
         deleteTodo={deleteTodo}
-        filter={todoFilter}
       />
-      <span className="todo__status">
-        {todos.filter((item) => item.isCompleted !== true).length} item(s) left
-      </span>
-      <span className="todo__deletecomplete" onClick={deleteCompletedTodos}>
-        Clear completed
-      </span>
-      <TodosFilter filter={todoFilter} setFilter={setTodoFilter} />
-      <p>Drag and drop to reorder list</p>
-    </>
+      <StatusBar
+        nbActiveTodos={todos.filter((item) => item.isCompleted !== true).length}
+        todosFilter={todosFilter}
+        setTodosFilter={setTodosFilter}
+        deleteCompletedTodos={deleteCompletedTodos}
+      />
+      <p className="footer__message">Drag and drop to reorder list</p>
+    </div>
   );
 };

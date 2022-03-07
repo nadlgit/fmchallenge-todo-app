@@ -1,0 +1,94 @@
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  min-height: 4.6rem;
+  padding: 1.3rem 1.5rem;
+  background: var(--todo-background-color);
+  color: var(--todo-text-color);
+  border-bottom: 1px solid var(--todo-border-color);
+}
+.todo__item--input {
+  margin-block: 2rem;
+  border: none;
+  border-radius: 5px;
+}
+.todo__item--firstitem {
+  border-radius: 5px 5px 0 0;
+}
+
+/* Checkbox and label */
+input[type='checkbox'].todo__checkbox {
+  display: none;
+}
+input[type='checkbox'].todo__checkbox + label {
+  position: relative;
+  padding-left: 3rem;
+}
+input[type='checkbox'].todo__checkbox:not(:disabled) + label {
+  cursor: pointer;
+}
+input[type='checkbox'].todo__checkbox:checked + label {
+  text-decoration: line-through;
+  color: var(--todo-completed-text-color);
+}
+input[type='checkbox'].todo__checkbox + label::before,
+input[type='checkbox'].todo__checkbox + label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  content: '';
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--todo-border-color);
+  border-radius: 100%;
+  background-clip: border-box;
+}
+input[type='checkbox'].todo__checkbox:checked + label::before,
+input[type='checkbox'].todo__checkbox:hover:not(:disabled) + label::before {
+  background: var(--gradient-check-background);
+  border-color: transparent;
+}
+input[type='checkbox'].todo__checkbox:checked + label::after {
+  background: url(../assets/icon-check.svg) center no-repeat;
+  border-color: transparent;
+}
+input[type='checkbox'].todo__checkbox:hover:not(:disabled) + label::after {
+  top: 1px;
+  left: 1px;
+  width: calc(2rem - 2px);
+  background: var(--todo-background-color);
+  border-color: transparent;
+}
+
+/* Text input */
+input[type='text'].todo__input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+input[type='text'].todo__input:focus {
+  outline: none;
+}
+
+/* Text delete */
+.todo__delete {
+  width: 1.5rem;
+  height: 1.5rem;
+  align-self: center;
+  visibility: hidden;
+}
+.todo__item:hover .todo__delete {
+  cursor: pointer;
+  visibility: visible;
+}
+@media screen and (max-width: 780px) {
+  .todo__delete {
+    visibility: visible;
+  }
+}

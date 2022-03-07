@@ -1,0 +1,69 @@
+.todos__statusbar {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 'status filter actions';
+  justify-content: space-between;
+}
+@media screen and (max-width: 780px) {
+  .todos__statusbar {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'status actions'
+      'filter filter';
+  }
+}
+
+.todos__status,
+.todos__actions,
+.todos__filter {
+  background: var(--todo-background-color);
+  color: var(--status-text-color);
+  font-size: 1.5rem;
+  padding-block: 1rem;
+}
+
+.todos__status {
+  grid-area: status;
+  padding-left: 1.5rem;
+  border-radius: 0 0 0 5px;
+}
+
+.todos__actions {
+  grid-area: actions;
+  padding-right: 1.5rem;
+  border-radius: 0 0 5px 0;
+  cursor: pointer;
+}
+.todos__actions:hover {
+  color: var(--todo-text-color);
+}
+
+.todos__filter {
+  grid-area: filter;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-content: center;
+  padding-inline: 1.5rem;
+}
+.todos__filter input[type='radio'] {
+  display: none;
+}
+.todos__filter input[type='radio'] + label {
+  cursor: pointer;
+}
+.todos__filter input[type='radio']:hover + label {
+  color: var(--todo-text-color);
+}
+.todos__filter input[type='radio']:checked + label {
+  color: var(--color-bright-blue);
+}
+@media screen and (max-width: 780px) {
+  .todos__filter {
+    gap: 3rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+  }
+}

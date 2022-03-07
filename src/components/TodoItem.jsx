@@ -1,23 +1,61 @@
-import { TodoWrapper } from './TodoWrapper';
-import { TextWithCheckbox } from './TextWithCheckbox';
+import './TodoItem.css';
+import { useState } from 'react';
+import { getRandomHtmlId } from '../utils/helpers';
 import IconCross from '../assets/icon-cross.svg';
 
 export const TodoItem = ({
+  isInput = false,
+  isFiller = false,
+  isFirstListItem = false,
   text = '',
   isCompleted = false,
+  addTodo = () => {},
   setCompleted = () => {},
   deleteTodo = () => {},
 }) => {
+  const [isChecked, setIsChecked] = useState(isCompleted);
+  const handleCheckChange = () => {
+    setIsChecked(!isChecked);
+    setCompleted(!isChecked);
+  };
+  const handleInputKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      addTodo(e.target.value);
+      e.target.value = '';
+    }
+  };
+  const checkHtmlID = getRandomHtmlId('ck');
   return (
-    <TodoWrapper>
-      <TextWithCheckbox
-        text={text}
-        checked={isCompleted}
-        toggleChecked={() => setCompleted(!isCompleted)}
+    <div
+      className={`todo__item ${isInput ? 'todo__item--input' : ''} ${
+        isFirstListItem ? 'todo__item--firstitem' : ''
+      }`}
+    >
+      <input
+        id={checkHtmlID}
+        className="todo__checkbox"
+        type="checkbox"
+        checked={isInput || isFiller ? false : isChecked}
+        disabled={isInput || isFiller}
+        onChange={isInput || isFiller ? undefined : handleCheckChange}
       />
-      <span className="todo__delete" onClick={() => deleteTodo()}>
-        <img src={IconCross} alt="Icon cross" />
-      </span>
-    </TodoWrapper>
+      <label htmlFor={checkHtmlID}>{isInput || isFiller ? '' : text}</label>
+      {isInput ? (
+        <input
+          className="todo__input"
+          type="text"
+          onKeyPress={handleInputKeyPress}
+          placeholder="Create a new todo..."
+        />
+      ) : null}
+      {isInput || isFiller ? null : (
+        <img
+          src={IconCross}
+          alt="Icon cross"
+          className="todo__delete"
+          onClick={() => deleteTodo()}
+        />
+      )}
+    </div>
   );
 };

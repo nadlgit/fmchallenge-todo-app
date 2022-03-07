@@ -1,0 +1,47 @@
+.app {
+  /* Theme (default = dark) */
+  --app-background-color: var(--color-dt-very-dark-blue);
+  --app-background-img: url(./assets/bg-desktop-dark.jpg);
+  --app-background-img-width: 1440;
+  --app-background-img-height: 300;
+  --todo-background-color: var(--color-dt-very-desaturated-dark-blue);
+  --todo-text-color: var(--color-dt-light-grayish-blue-1);
+  --todo-completed-text-color: var(--color-dt-dark-grayish-blue);
+  --todo-border-color: var(--color-dt-dark-grayish-blue);
+  --status-text-color: var(--color-dt-very-dark-grayish-blue-1);
+  /* Other */
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: space-between;
+  background: var(--app-background-img) top center/100% no-repeat, var(--app-background-color);
+}
+.app.themelight {
+  --app-background-color: var(--color-lt-very-light-gray);
+  --app-background-img: url(./assets/bg-desktop-light.jpg);
+  --todo-background-color: white;
+  --todo-text-color: var(--color-lt-very-dark-grayish-blue);
+  --todo-completed-text-color: var(--color-lt-light-grayish-blue);
+  --todo-border-color: var(--color-lt-light-grayish-blue);
+  --status-text-color: var(--color-lt-dark-grayish-blue);
+}
+@media screen and (max-width: 780px) {
+  .app {
+    --app-background-img: url(./assets/bg-mobile-dark.jpg);
+    --app-background-img-width: 375;
+    --app-background-img-height: 200;
+  }
+  .app.themelight {
+    --app-background-img: url(./assets/bg-mobile-light.jpg);
+  }
+}
+
+.attribution {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--status-text-color);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
