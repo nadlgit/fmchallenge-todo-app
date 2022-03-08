@@ -24,7 +24,7 @@ const todosReducer = (todos, action) => {
       break;
     case todosActionTypes.UPDATE_TODO:
       const todoFound = newTodos.find((todo) => todo.id === todoUpdate?.id);
-      if (todoFound && todoUpdate?.isCompleted) {
+      if (todoFound && typeof todoUpdate?.isCompleted == 'boolean') {
         todoFound.isCompleted = todoUpdate?.isCompleted;
       }
       break;

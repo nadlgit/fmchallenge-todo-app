@@ -14,9 +14,10 @@ export const TodoItem = ({
   deleteTodo = () => {},
 }) => {
   const [isChecked, setIsChecked] = useState(isCompleted);
-  const handleCheckChange = () => {
-    setIsChecked(!isChecked);
-    setCompleted(!isChecked);
+  const handleCheckChange = (e) => {
+    const newValue = !isChecked;
+    setIsChecked(newValue);
+    setCompleted(newValue);
   };
   const handleInputKeyPress = (e) => {
     if (e.key === 'Enter') {
