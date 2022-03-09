@@ -25,7 +25,7 @@ export const Dashboard = () => {
         setTodosFilter={setTodosFilter}
         deleteCompletedTodos={deleteCompletedTodos}
       />
-      <p className="footer__message">Drag and drop to reorder list</p>
+      <p className="footer__message">(not yet) Drag and drop to reorder list</p>
     </div>
   );
 };

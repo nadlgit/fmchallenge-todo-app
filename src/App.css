@@ -6,8 +6,9 @@
   --app-background-img-height: 300;
   --todo-background-color: var(--color-dt-very-desaturated-dark-blue);
   --todo-text-color: var(--color-dt-light-grayish-blue-1);
-  --todo-completed-text-color: var(--color-dt-dark-grayish-blue);
-  --todo-border-color: var(--color-dt-dark-grayish-blue);
+  --todo-hover-text-color: var(--color-dt-light-grayish-blue-2);
+  --todo-completed-text-color: var(--color-dt-very-dark-grayish-blue-1);
+  --todo-border-color: var(--color-dt-very-dark-grayish-blue-2);
   --status-text-color: var(--color-dt-very-dark-grayish-blue-1);
   /* Other */
   min-height: 100vh;
@@ -15,14 +16,17 @@
   justify-content: center;
   align-content: space-between;
   background: var(--app-background-img) top center/100% no-repeat, var(--app-background-color);
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-normal);
 }
 .app.themelight {
   --app-background-color: var(--color-lt-very-light-gray);
   --app-background-img: url(./assets/bg-desktop-light.jpg);
   --todo-background-color: white;
   --todo-text-color: var(--color-lt-very-dark-grayish-blue);
+  --todo-hover-text-color: var(--color-lt-very-dark-grayish-blue);
   --todo-completed-text-color: var(--color-lt-light-grayish-blue);
-  --todo-border-color: var(--color-lt-light-grayish-blue);
+  --todo-border-color: var(--color-lt-very-light-grayish-blue);
   --status-text-color: var(--color-lt-dark-grayish-blue);
 }
 @media screen and (max-width: 780px) {
