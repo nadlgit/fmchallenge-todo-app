@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fmchallenge-todo-app/static/css/main.b6dbfd34.css",
-    "main.js": "/fmchallenge-todo-app/static/js/main.eae5e277.js",
+    "main.css": "/fmchallenge-todo-app/static/css/main.09dd7d06.css",
+    "main.js": "/fmchallenge-todo-app/static/js/main.3aa3b00c.js",
     "static/media/bg-desktop-light.jpg": "/fmchallenge-todo-app/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
     "static/media/bg-desktop-dark.jpg": "/fmchallenge-todo-app/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
     "index.html": "/fmchallenge-todo-app/index.html",
@@ -9,11 +9,11 @@
     "static/media/icon-moon.svg": "/fmchallenge-todo-app/static/media/icon-moon.6c03114b495d05f4380b3c544d9afe2a.svg",
     "static/media/icon-cross.svg": "/fmchallenge-todo-app/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
     "static/media/icon-check.svg": "/fmchallenge-todo-app/static/media/icon-check.a8fb15d0278c8e312df5.svg",
-    "main.b6dbfd34.css.map": "/fmchallenge-todo-app/static/css/main.b6dbfd34.css.map",
-    "main.eae5e277.js.map": "/fmchallenge-todo-app/static/js/main.eae5e277.js.map"
+    "main.09dd7d06.css.map": "/fmchallenge-todo-app/static/css/main.09dd7d06.css.map",
+    "main.3aa3b00c.js.map": "/fmchallenge-todo-app/static/js/main.3aa3b00c.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6dbfd34.css",
-    "static/js/main.eae5e277.js"
+    "static/css/main.09dd7d06.css",
+    "static/js/main.3aa3b00c.js"
   ]
 }
