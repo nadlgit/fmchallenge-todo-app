@@ -9,12 +9,17 @@ import { StatusBar } from '../components/StatusBar';
 export const Dashboard = () => {
   const { todos, addTodo, setCompleted, deleteTodo, deleteCompletedTodos } = useTodos();
   const [todosFilter, setTodosFilter] = useState(todosFilterValues.ALL);
+  const filteredTodos = todos.filter(
+    (item) =>
+      todosFilter === todosFilterValues.ALL ||
+      (todosFilter === todosFilterValues.ACTIVE && item.isCompleted !== true) ||
+      (todosFilter === todosFilterValues.COMPLETED && item.isCompleted === true)
+  );
   return (
     <div className="todos__dashboard">
       <Header />
       <TodosList
-        todos={todos}
-        todosFilter={todosFilter}
+        todos={filteredTodos}
         addTodo={addTodo}
         setCompleted={setCompleted}
         deleteTodo={deleteTodo}

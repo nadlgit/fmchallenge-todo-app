@@ -7,6 +7,9 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setIsLightMode(!isLightMode);
   };
+  // const toggleTheme = useCallback(() => {
+  //   setIsLightMode((i) => !i);
+  // }, []);
   return (
     <ThemeContext.Provider value={{ isLightMode, toggleTheme }}>{children}</ThemeContext.Provider>
   );
@@ -15,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
 export const useTheme = () => {
   const theme = useContext(ThemeContext);
   if (!theme) {
-    throw new Error('ThemeContext is required');
+    throw new Error('Theme provider is required');
   }
   return theme;
 };

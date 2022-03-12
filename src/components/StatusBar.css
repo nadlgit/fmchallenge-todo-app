@@ -1,12 +1,15 @@
 .todos__statusbar {
+  background: var(--todo-background-color);
+  border-radius: 0 0 5px 5px;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: repeat(3, auto);
   grid-template-areas: 'status filter actions';
   justify-content: space-between;
 }
 @media screen and (max-width: 780px) {
   .todos__statusbar {
+    background: transparent;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: 1fr auto;
     grid-template-areas:
@@ -20,19 +23,19 @@
 .todos__filter {
   background: var(--todo-background-color);
   color: var(--status-text-color);
-  font-size: 1.4rem;
-  padding-block: 1rem;
+  font-size: 0.875rem;
+  padding-block: 0.7em;
 }
 
 .todos__status {
   grid-area: status;
-  padding-left: 1.5rem;
+  padding-left: 1em;
   border-radius: 0 0 0 5px;
 }
 
 .todos__actions {
   grid-area: actions;
-  padding-right: 1.5rem;
+  padding-right: 1em;
   border-radius: 0 0 5px 0;
   cursor: pointer;
 }
@@ -43,10 +46,11 @@
 .todos__filter {
   grid-area: filter;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1em;
   justify-content: center;
   align-content: center;
-  padding-inline: 1.5rem;
+  padding-inline: 1em;
   font-weight: var(--font-weight-bold);
 }
 .todos__filter input[type='radio'] {
@@ -54,7 +58,7 @@
 }
 .todos__filter input[type='radio'] + label {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
 }
 .todos__filter input[type='radio']:hover + label {
   color: var(--todo-text-color);
@@ -64,8 +68,8 @@
 }
 @media screen and (max-width: 780px) {
   .todos__filter {
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2em;
+    margin-top: 1.3rem;
     border-radius: 5px;
   }
 }

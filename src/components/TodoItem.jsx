@@ -13,6 +13,8 @@ export const TodoItem = ({
   setCompleted = () => {},
   deleteTodo = () => {},
 }) => {
+  console.log(`render item "${text}"`);
+
   const [isChecked, setIsChecked] = useState(isCompleted);
   const handleCheckChange = (e) => {
     const newValue = !isChecked;

@@ -26,9 +26,6 @@
   /* Font weigths */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-
-  /* Reset font size for easier rem calculation */
-  font-size: 62.5%;
 }
 
 * {

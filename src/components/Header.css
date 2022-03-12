@@ -3,12 +3,12 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  font-size: 3rem;
+  font-size: 1.875rem;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 1rem;
-  padding-bottom: 3rem;
+  letter-spacing: 0.5em;
+  padding-bottom: 1em;
 }
 .todos__header img {
-  height: 2rem;
+  height: 0.6em;
 }

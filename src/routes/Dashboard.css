@@ -8,7 +8,7 @@
     7vh,
     calc(var(--dashboard-margin-top) * 2)
   );
-  width: calc(0.4 * 100vw);
+  width: calc(0.35 * 100vw);
 }
 @media screen and (max-width: 780px) {
   .todos__dashboard {
@@ -17,8 +17,8 @@
 }
 
 .footer__message {
-  margin-top: 3rem;
+  margin-top: 2em;
   text-align: center;
   color: var(--status-text-color);
-  font-size: 1.2rem;
+  font-size: 0.75rem;
 }
