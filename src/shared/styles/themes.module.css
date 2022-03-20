@@ -1,0 +1,49 @@
+@value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
+
+.darkattr {
+  --app-background-img: url(shared/styles/bg-desktop-dark.jpg);
+  --app-background-color: var(--color-dt-very-dark-blue);
+  --todo-background-color: var(--color-dt-very-desaturated-dark-blue);
+  --todo-text-color: var(--color-dt-light-grayish-blue-1);
+  --todo-hover-text-color: var(--color-dt-light-grayish-blue-2);
+  --todo-completed-text-color: var(--color-dt-very-dark-grayish-blue-1);
+  --todo-border-color: var(--color-dt-very-dark-grayish-blue-2);
+  --status-text-color: var(--color-dt-very-dark-grayish-blue-1);
+}
+
+.lightattr {
+  --app-background-img: url(shared/styles/bg-desktop-light.jpg);
+  --app-background-color: var(--color-lt-very-light-gray);
+  --todo-background-color: white;
+  --todo-text-color: var(--color-lt-very-dark-grayish-blue);
+  --todo-hover-text-color: var(--color-lt-very-dark-grayish-blue);
+  --todo-completed-text-color: var(--color-lt-light-grayish-blue);
+  --todo-border-color: var(--color-lt-very-light-grayish-blue);
+  --status-text-color: var(--color-lt-dark-grayish-blue);
+}
+
+.bgsize {
+  --app-background-img-width: 1440;
+  --app-background-img-height: 300;
+}
+
+@media bp-mobile-screen {
+  .darkattr {
+    --app-background-img: url(shared/styles/bg-mobile-dark.jpg);
+  }
+  .lightattr {
+    --app-background-img: url(shared/styles/bg-mobile-light.jpg);
+  }
+  .bgsize {
+    --app-background-img-width: 375;
+    --app-background-img-height: 200;
+  }
+}
+
+.dark {
+  composes: darkattr bgsize;
+}
+
+.light {
+  composes: lightattr bgsize;
+}

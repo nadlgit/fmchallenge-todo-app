@@ -1,0 +1,19 @@
+@value dark, light from 'shared/styles/themes.module.css';
+
+.app {
+  min-height: 100vh;
+  background: var(--app-background-img) top center/100% no-repeat, var(--app-background-color);
+  padding-top: calc(
+    var(--app-background-img-height) * 0.25 * 100vw / var(--app-background-img-width)
+  );
+  font-size: 1.125rem;
+  display: grid;
+  justify-content: center;
+  align-content: space-between;
+}
+.appdark {
+  composes: dark app;
+}
+.applight {
+  composes: light app;
+}

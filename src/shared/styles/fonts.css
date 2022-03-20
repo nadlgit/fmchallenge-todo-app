@@ -1,0 +1,6 @@
+:root {
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: var(--font-weight-normal);
+}

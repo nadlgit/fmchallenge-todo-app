@@ -1,39 +1,11 @@
-:root {
-  /* Primary colors */
-  --color-bright-blue: hsl(220, 98%, 61%);
-  --gradient-check-background: linear-gradient(
-    to right bottom,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
-
-  /* Light theme neutral colors */
-  --color-lt-very-light-gray: hsl(0, 0%, 98%);
-  --color-lt-very-light-grayish-blue: hsl(236, 33%, 92%);
-  --color-lt-light-grayish-blue: hsl(233, 11%, 84%);
-  --color-lt-dark-grayish-blue: hsl(236, 9%, 61%);
-  --color-lt-very-dark-grayish-blue: hsl(235, 19%, 35%);
-
-  /* Dark theme neutral colors */
-  --color-dt-very-dark-blue: hsl(235, 21%, 11%);
-  --color-dt-very-desaturated-dark-blue: hsl(235, 24%, 19%);
-  --color-dt-light-grayish-blue-1: hsl(234, 39%, 85%);
-  --color-dt-light-grayish-blue-2: hsl(236, 33%, 92%);
-  --color-dt-dark-grayish-blue: hsl(234, 11%, 52%);
-  --color-dt-very-dark-grayish-blue-1: hsl(233, 14%, 35%);
-  --color-dt-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
-
-  /* Font weigths */
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-}
-
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font: inherit;
 }
 
-body {
-  font-family: 'Josefin Sans', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

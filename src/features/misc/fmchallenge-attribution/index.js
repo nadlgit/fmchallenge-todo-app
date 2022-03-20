@@ -1,0 +1,1 @@
+export { ChallengeAttribution } from './attribution';
