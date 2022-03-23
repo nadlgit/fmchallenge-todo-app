@@ -8,24 +8,21 @@
   align-content: center;
   min-height: calc(var(--todo-checkbox-width) + 2 * var(--todo-item-padding-block));
   padding: var(--todo-item-padding-block) var(--todo-item-padding-inline);
-  color: var(--todo-text-color);
-  border-bottom: 1px solid var(--todo-border-color);
-}
-.inputitem {
-  border: none;
 }
 
-.imgdelete {
-  width: 0.8em;
-  height: 0.8em;
+.delete {
   visibility: hidden;
 }
-.item:hover .imgdelete {
-  cursor: pointer;
+.item:hover .delete {
   visibility: visible;
 }
 @media bp-mobile-screen {
-  .imgdelete {
+  .delete {
     visibility: visible;
   }
+}
+
+.delete img {
+  width: 0.8em;
+  height: 0.8em;
 }

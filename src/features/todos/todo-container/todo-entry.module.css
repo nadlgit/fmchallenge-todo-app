@@ -1,0 +1,6 @@
+.entry {
+  background: var(--todo-background-color);
+  color: var(--todo-text-color);
+  border-radius: 5px;
+  margin-block: 1em;
+}
