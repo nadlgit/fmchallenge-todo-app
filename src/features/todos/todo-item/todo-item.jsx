@@ -1,6 +1,7 @@
 import styles from './todo-item.module.css';
 import { CheckBox } from './checkbox';
 import { TextInput } from './text-input';
+import { Actionnable } from 'shared/ui';
 import IconCross from './icon-cross.svg';
 
 export const TodoItem = ({
@@ -22,12 +23,9 @@ export const TodoItem = ({
       />
       {isInput ? <TextInput onEnterKeyPress={addTodo} /> : null}
       {isInput || isFiller ? null : (
-        <img
-          src={IconCross}
-          alt="Icon to delete item"
-          className={styles.imgdelete}
-          onClick={() => deleteTodo()}
-        />
+        <Actionnable className={styles.delete} onClick={() => deleteTodo()}>
+          <img src={IconCross} alt="Delete todo item" />
+        </Actionnable>
       )}
     </div>
   );

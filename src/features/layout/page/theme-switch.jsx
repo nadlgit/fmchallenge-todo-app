@@ -2,18 +2,19 @@ import styles from './theme-switch.module.css';
 import IconMoon from './icon-moon.svg';
 import IconSun from './icon-sun.svg';
 import { useTheme } from 'features/theme';
+import { Actionnable } from 'shared/ui';
 
-const iconSwitchToDarkMode = { src: IconMoon, alt: 'Icon to switch to dark mode' };
-const iconSwitchToLigntMode = { src: IconSun, alt: 'Icon to switch to light mode' };
 export const ThemeSwitch = () => {
-  const { theme, toggleTheme } = useTheme();
-  const toggleThemeIcon = theme === 'light' ? iconSwitchToDarkMode : iconSwitchToLigntMode;
+  const { theme, setTheme } = useTheme();
   return (
-    <img
-      className={styles.img}
-      src={toggleThemeIcon?.src}
-      alt={toggleThemeIcon?.alt}
-      onClick={() => toggleTheme()}
-    />
+    <Actionnable
+      className={styles.action}
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      <img
+        src={theme === 'light' ? IconMoon : IconSun}
+        alt={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+      />
+    </Actionnable>
   );
 };

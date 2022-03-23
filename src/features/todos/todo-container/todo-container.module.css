@@ -1,56 +1,6 @@
-@value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
-
-.entry {
-  background: var(--todo-background-color);
-  border-radius: 5px;
-  margin-block: 1em;
-}
-
-.list {
-  background: var(--todo-background-color);
-  border-radius: 5px 5px 0 0;
-}
-
-.statusbar {
-  background: var(--todo-background-color);
-  border-radius: 0 0 5px 5px;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(3, auto);
-  grid-template-areas: 'status filter delcomplete';
-  justify-content: space-between;
-}
-@media bp-mobile-screen {
-  .statusbar {
-    background: transparent;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      'status delcomplete'
-      'filter filter';
-  }
-}
-
-.statusbar > * {
-  background: var(--todo-background-color);
+.footerMessage {
+  margin-top: 2em;
+  text-align: center;
   color: var(--status-text-color);
-  font-size: 0.875rem;
-  padding-block: 0.7em;
-}
-
-.status {
-  grid-area: status;
-  padding-left: 1em;
-  border-radius: 0 0 0 5px;
-}
-
-.delcomplete {
-  grid-area: delcomplete;
-  padding-right: 1em;
-  border-radius: 0 0 5px 0;
-  cursor: pointer;
-}
-.delcomplete:hover,
-.delcomplete:focus {
-  color: var(--todo-text-color);
+  font-size: 0.75rem;
 }
