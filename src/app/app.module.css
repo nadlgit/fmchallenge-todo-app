@@ -6,7 +6,8 @@
   padding-top: calc(
     var(--app-background-img-height) * 0.25 * 100vw / var(--app-background-img-width)
   );
-  font-size: 1.125rem;
+  font-size: 1rem;
+  color: var(--default-text-color);
   display: grid;
   justify-content: center;
   align-content: space-between;

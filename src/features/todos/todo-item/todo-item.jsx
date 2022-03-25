@@ -12,21 +12,21 @@ export const TodoItem = ({
   addTodo = (text) => {},
   setCompleted = (value) => {},
   deleteTodo = () => {},
-}) => {
-  return (
-    <div className={`${styles.item} ${isInput ? styles.inputitem : ''}`}>
-      <CheckBox
-        label={isInput || isFiller ? '' : text}
-        isChecked={isInput || isFiller ? false : isCompleted}
-        isDisabled={isInput || isFiller}
-        onCheckChange={isInput || isFiller ? undefined : setCompleted}
-      />
-      {isInput ? <TextInput onEnterKeyPress={addTodo} /> : null}
-      {isInput || isFiller ? null : (
-        <Actionnable className={styles.delete} onClick={() => deleteTodo()}>
-          <img src={IconCross} alt="Delete todo item" />
-        </Actionnable>
-      )}
-    </div>
-  );
-};
+}) => (
+  <div className={`${styles.item} ${isInput ? styles.inputitem : ''}`}>
+    <CheckBox
+      label={isInput || isFiller ? '' : text}
+      isChecked={isInput || isFiller ? false : isCompleted}
+      isDisabled={isInput || isFiller}
+      onCheckChange={isInput || isFiller ? undefined : setCompleted}
+    />
+
+    {isInput ? <TextInput onEnterKeyPress={addTodo} /> : null}
+
+    {isInput || isFiller ? null : (
+      <Actionnable className={styles.delete} onClick={() => deleteTodo()}>
+        <img src={IconCross} alt="Delete todo item" />
+      </Actionnable>
+    )}
+  </div>
+);

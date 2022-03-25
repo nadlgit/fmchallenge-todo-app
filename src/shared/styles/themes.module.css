@@ -8,7 +8,7 @@
   --todo-hover-text-color: var(--color-dt-light-grayish-blue-2);
   --todo-completed-text-color: var(--color-dt-very-dark-grayish-blue-1);
   --todo-border-color: var(--color-dt-very-dark-grayish-blue-2);
-  --status-text-color: var(--color-dt-very-dark-grayish-blue-1);
+  --default-text-color: var(--color-dt-very-dark-grayish-blue-1);
 }
 
 .lightattr {
@@ -19,7 +19,7 @@
   --todo-hover-text-color: var(--color-lt-very-dark-grayish-blue);
   --todo-completed-text-color: var(--color-lt-light-grayish-blue);
   --todo-border-color: var(--color-lt-very-light-grayish-blue);
-  --status-text-color: var(--color-lt-dark-grayish-blue);
+  --default-text-color: var(--color-lt-dark-grayish-blue);
 }
 
 .bgsize {
