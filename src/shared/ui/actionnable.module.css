@@ -1,6 +1,6 @@
 .button {
   border: none;
-  background: inherit;
+  background: transparent;
   font: inherit;
   color: inherit;
   cursor: pointer;

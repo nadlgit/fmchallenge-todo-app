@@ -1,17 +1,16 @@
 @value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
 
 .item {
-  --todo-item-padding-block: 0.7em;
-  --todo-item-padding-inline: 0.8em;
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  min-height: calc(var(--todo-checkbox-width) + 2 * var(--todo-item-padding-block));
-  padding: var(--todo-item-padding-block) var(--todo-item-padding-inline);
+  align-items: center;
+  color: var(--todo-text-color);
+  padding: 1.1em 1.25rem;
 }
 
 .delete {
   visibility: hidden;
+  padding-left: 1.3em;
 }
 .item:hover .delete {
   visibility: visible;
@@ -23,6 +22,7 @@
 }
 
 .delete img {
-  width: 0.8em;
-  height: 0.8em;
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
 }

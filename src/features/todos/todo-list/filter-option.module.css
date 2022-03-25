@@ -1,0 +1,13 @@
+input[type='radio'].filter {
+  display: none;
+}
+input[type='radio'].filter + label {
+  cursor: pointer;
+}
+input[type='radio'].filter:hover + label,
+input[type='radio'].filter:focus + label {
+  color: var(--todo-text-color);
+}
+input[type='radio'].filter:checked + label {
+  color: var(--color-bright-blue);
+}

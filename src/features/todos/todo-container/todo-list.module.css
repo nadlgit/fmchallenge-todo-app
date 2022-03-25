@@ -1,9 +1,0 @@
-.list {
-  background: var(--todo-background-color);
-  color: var(--todo-text-color);
-  border-radius: 5px 5px 0 0;
-}
-
-.list > * {
-  border-bottom: 1px solid var(--todo-border-color);
-}

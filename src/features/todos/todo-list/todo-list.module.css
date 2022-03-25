@@ -1,0 +1,78 @@
+@value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    'list list list'
+    'count filter delcomplete';
+  grid-template-columns: auto 1fr auto;
+  justify-content: space-between;
+}
+@media bp-mobile-screen {
+  .grid {
+    grid-template-areas:
+      'list list'
+      'count delcomplete'
+      'filter filter';
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.list {
+  grid-area: list;
+  background: var(--todo-background-color);
+  border-radius: 5px 5px 0 0;
+}
+.list > * {
+  border-bottom: 1px solid var(--todo-border-color);
+}
+
+.statusbar {
+  --statusbar-padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+  background: var(--todo-background-color);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+}
+
+@media bp-mobile-screen {
+  .statusbar {
+    min-height: 3.2rem;
+    font-size: 0.8rem;
+  }
+}
+.count {
+  composes: statusbar;
+  grid-area: count;
+  border-radius: 0 0 0 5px;
+  padding-left: var(--statusbar-padding-inline);
+}
+
+.filter {
+  composes: statusbar;
+  grid-area: filter;
+  justify-content: center;
+  gap: 1.3em;
+  flex-wrap: wrap;
+  font-size: 0.77rem;
+}
+@media bp-mobile-screen {
+  .filter {
+    border-radius: 5px;
+    margin-top: 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+.delcomplete {
+  composes: statusbar;
+  grid-area: delcomplete;
+  border-radius: 0 0 5px 0;
+  padding-right: var(--statusbar-padding-inline);
+}
+.delcomplete:hover,
+.delcomplete:focus {
+  color: var(--todo-text-color);
+}

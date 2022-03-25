@@ -1,11 +1,24 @@
+@value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
+
+.container {
+  width: 35vw;
+  min-width: 30em;
+}
+@media bp-mobile-screen {
+  .container {
+    width: 85vw;
+    min-width: 25em;
+  }
+}
+
 .container h1 {
   color: white;
-  font-size: 1.875rem;
+  font-size: 2.1rem;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.42em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.1em;
 }
