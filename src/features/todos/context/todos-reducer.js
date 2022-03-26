@@ -1,6 +1,6 @@
 export const todosReducer = (state, action) => {
   if (!Array.isArray(state)) {
-    throw new Error("todosReducer's state must be an array");
+    throw new Error('todosReducer state must be an array');
   }
   let id = action?.payload?.id;
   let text = action?.payload?.text?.trim() ?? '';
@@ -16,7 +16,7 @@ export const todosReducer = (state, action) => {
     case 'UPDATE':
       const shouldUpdateText = text.length > 0;
       const shouldUpdateIsCompleted = typeof isCompleted === 'boolean';
-      if (!id || !(shouldUpdateText || shouldUpdateIsCompleted)) {
+      if (id === undefined || !(shouldUpdateText || shouldUpdateIsCompleted)) {
         return state;
       }
       return state.map((todo) =>
@@ -29,13 +29,13 @@ export const todosReducer = (state, action) => {
           : todo
       );
     case 'DELETE':
-      if (!id) {
+      if (id === undefined) {
         return state;
       }
       return state.filter((todo) => todo.id !== id);
     case 'DELETE_COMPLETED':
       return state.filter((todo) => todo.isCompleted !== true);
     default:
-      throw new Error(`todosReducer's unknown action type: ${action?.type}`);
+      throw new Error(`todosReducer unknown action type: ${action?.type}`);
   }
 };
