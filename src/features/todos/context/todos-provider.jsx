@@ -4,8 +4,8 @@ import { starterTodos } from './starter-todos';
 
 export const TodosContext = createContext();
 
-export const TodosProvider = ({ children }) => {
-  const [todos, dispatchTodos] = useReducer(todosReducer, starterTodos);
+export const TodosProvider = ({ children, initialTodos = starterTodos }) => {
+  const [todos, dispatchTodos] = useReducer(todosReducer, initialTodos);
   const [completedFilter, setCompletedFilter] = useState(null);
 
   const addTodo = (text) => {
