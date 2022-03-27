@@ -89,11 +89,21 @@ describe('TodoContainer', () => {
       .forEach((todo) =>
         expect(screen.queryByRole('checkbox', { name: todo.text })).not.toBeInTheDocument()
       );
+    initialTodos
+      .filter((todo) => todo.isCompleted !== true)
+      .forEach((todo) =>
+        expect(screen.getByRole('checkbox', { name: todo.text })).toBeInTheDocument()
+      );
   });
 
   test('filter completed', () => {
     render(<TodoContainer />, { wrapper: TodosWrapper });
     userEvent.click(screen.getByRole('radio', { name: /completed/i }));
+    initialTodos
+      .filter((todo) => todo.isCompleted === true)
+      .forEach((todo) =>
+        expect(screen.getByRole('checkbox', { name: todo.text })).toBeInTheDocument()
+      );
     initialTodos
       .filter((todo) => todo.isCompleted !== true)
       .forEach((todo) =>
