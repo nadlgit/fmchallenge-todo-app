@@ -6,8 +6,9 @@
 }
 @media bp-mobile-screen {
   .container {
+    font-size: 0.7rem;
     width: 85vw;
-    min-width: 25em;
+    min-width: 18.75em;
   }
 }
 
@@ -21,4 +22,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.1em;
+}
+@media bp-mobile-screen {
+  .container h1 {
+    font-size: 1.65rem;
+  }
 }

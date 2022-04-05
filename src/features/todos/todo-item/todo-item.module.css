@@ -7,6 +7,11 @@
   color: var(--todo-text-color);
   padding: 1.1em 1.25rem;
 }
+@media bp-mobile-screen {
+  .item {
+    padding-block: 1.2em;
+  }
+}
 
 .delete {
   visibility: hidden;

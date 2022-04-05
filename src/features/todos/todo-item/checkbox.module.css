@@ -1,5 +1,5 @@
 :root {
-  --todo-checkbox-width: 1.25em;
+  --todo-checkbox-width: 1.25rem;
 }
 
 input[type='checkbox'].checkbox {
@@ -8,6 +8,8 @@ input[type='checkbox'].checkbox {
 
 input[type='checkbox'].checkbox + label {
   position: relative;
+  display: flex;
+  align-items: center;
   min-height: var(--todo-checkbox-width); /*to deal with empty labels*/
   padding-left: calc(var(--todo-checkbox-width) + 1.3em);
 }
@@ -28,7 +30,7 @@ input[type='checkbox'].checkbox:focus:not(:disabled):not(:checked) + label {
 input[type='checkbox'].checkbox + label::before,
 input[type='checkbox'].checkbox + label::after {
   position: absolute;
-  top: calc((1em - var(--todo-checkbox-width)) / 2);
+  top: -1px;
   left: 0;
   display: inline-block;
   content: '';
@@ -45,12 +47,13 @@ input[type='checkbox'].checkbox:focus:not(:disabled):not(:checked) + label::befo
   border-color: transparent;
 }
 input[type='checkbox'].checkbox:checked + label::after {
+  left: 1px;
   background: url(./icon-check.svg) center no-repeat;
   border-color: transparent;
 }
 input[type='checkbox'].checkbox:hover:not(:disabled):not(:checked) + label::after,
 input[type='checkbox'].checkbox:focus:not(:disabled):not(:checked) + label::after {
-  top: calc(((1em - var(--todo-checkbox-width)) / 2) + 1px);
+  top: 0;
   left: 1px;
   width: calc(var(--todo-checkbox-width) - 2px);
   background: var(--todo-background-color);

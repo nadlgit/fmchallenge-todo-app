@@ -1,12 +1,5 @@
-@value bp-mobile-screen from 'shared/styles/breakpoints.module.css';
-
 .message {
   margin-block: 3rem;
   text-align: center;
   font-size: 0.7rem;
-}
-@media bp-mobile-screen {
-  .message {
-    font-size: 0.9rem;
-  }
 }
