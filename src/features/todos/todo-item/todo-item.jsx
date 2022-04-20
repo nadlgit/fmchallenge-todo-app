@@ -21,9 +21,9 @@ export const TodoItem = ({
       onCheckChange={isInput || isFiller ? undefined : setCompleted}
     />
 
-    {isInput ? <TextInput onEnterKeyPress={addTodo} /> : null}
+    {isInput && <TextInput onEnterKeyPress={addTodo} />}
 
-    {isInput || isFiller ? null : (
+    {!isInput && !isFiller && (
       <Actionnable className={styles.delete} onClick={() => deleteTodo()}>
         <img src={IconCross} alt="Delete todo item" />
       </Actionnable>
